@@ -1,0 +1,19 @@
+{
+  "name": "scroll",
+  "version": "1.0.0",
+  "description": "追踪滚动之旅",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llccing-demo/scroll.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llccing-demo/scroll/issues"
+  },
+  "homepage": "https://github.com/llccing-demo/scroll#readme"
+}
