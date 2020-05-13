@@ -1,24 +1,6 @@
 # bscroll
 
-## Project setup
-```
-yarn install
-```
+## 参考
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- [动画](https://cn.vuejs.org/v2/guide/transitions.html) App.vue 动画效果 技术点
+- [better-scroll example](https://better-scroll.github.io/examples/#/) App.vue 的动画效果参考
