@@ -18,7 +18,13 @@
 
     <div class="container" ref="container">
       <cube-scroll :scroll-events="['scroll']" @scroll="onContainerScroll">
-        <cube-slide :loop="false" :autoPlay="false" :showDots="false">
+        <cube-slide
+          @change="onContainerSlideChange"
+          ref="containerSlide"
+          :loop="false"
+          :autoPlay="false"
+          :showDots="false"
+        >
           <cube-slide-item>
             <cube-slide :options="slideImagesOptions" class="image-slide" :data="slideImages"></cube-slide>
             <div class="img">
@@ -71,23 +77,45 @@
 <script>
 export default {
   data() {
+    const labels = [
+      '热卖',
+      '水果',
+      '乳品',
+      '零食',
+      '肉蛋',
+      '蔬菜',
+      '酒饮',
+      '熟食',
+      '水产',
+      '粮油',
+      '轻食',
+      '火锅',
+      '日百'
+    ].map((label, value) => ({ label, value: value }))
+
+    const productImages = [
+      'product1.png',
+      'product2.png',
+      'product3.png',
+      'product4.png',
+      'product5.png',
+      'product3.png',
+      'product4.png',
+      'product5.png',
+      'product3.png',
+      'product4.png',
+      'product5.png',
+      'product3.png',
+      'product4.png',
+      'product5.png',
+      'product3.png',
+      'product4.png',
+      'product5.png',
+    ].map(name => `http://static.llccing.cn/llccing-demo/scroll/swiper/refresh/uploads/${name}`)
+
     return {
-      current: '热卖',
-      labels: [
-        '热卖',
-        '水果',
-        '乳品',
-        '零食',
-        '肉蛋',
-        '蔬菜',
-        '酒饮',
-        '熟食',
-        '水产',
-        '粮油',
-        '轻食',
-        '火锅',
-        '日百'
-      ].map(label => ({ label })),
+      current: 0,
+      labels,
       slideImages: [
         {
           image: 'http://static.llccing.cn/llccing-demo/scroll/swiper/refresh/uploads/banner1.jpg'
@@ -102,32 +130,15 @@ export default {
       slideImagesOptions: {
         stopPropagation: true
       },
-      productImages: [
-        'product1.png',
-        'product2.png',
-        'product3.png',
-        'product4.png',
-        'product5.png',
-        'product3.png',
-        'product4.png',
-        'product5.png',
-        'product3.png',
-        'product4.png',
-        'product5.png',
-        'product3.png',
-        'product4.png',
-        'product5.png',
-        'product3.png',
-        'product4.png',
-        'product5.png',
-      ].map(name => `http://static.llccing.cn/llccing-demo/scroll/swiper/refresh/uploads/${name}`),
+      productImages,
       isShowTop: true
     }
   },
   methods: {
     changeHandler(cur) {
-      console.log(cur)
       this.current = cur
+      const containerSlide = this.$refs.containerSlide
+      containerSlide._goToPage(cur, 0)
     },
     onContainerScroll({ y }) {
       let con = this.$refs.container
@@ -140,6 +151,9 @@ export default {
         con.style.transform = 'translateY(0px)'
         top.style.transform = 'translateY(0px)'
       }
+    },
+    onContainerSlideChange(index) {
+      this.current = index
     }
   }
 }
