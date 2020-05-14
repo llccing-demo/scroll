@@ -72,6 +72,10 @@
         </cube-slide>
       </cube-scroll>
     </div>
+
+    <div class="img footer">
+      <img src="http://static.llccing.cn/llccing-demo/scroll/swiper/refresh/images/footer.png" />
+    </div>
   </div>
 </template>
 <script>
@@ -195,9 +199,14 @@ $active-color = #ff4891
           margin-right 5px
   .container
     height 100%
-    padding-bottom 50px
+    padding-bottom 80px
+    box-sizing border-box
     transition all .5s
     .image-slide
       img
         width 375px
+  .footer
+    position absolute
+    bottom 0
+    z-index 1
 </style>
