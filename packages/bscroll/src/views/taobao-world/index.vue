@@ -57,6 +57,12 @@
       <!-- 地球背景 -->
       <div class="container-bg"></div>
     </div>
+    <div class="content">
+      <img src="http://static.llccing.cn/llccing-demo/scroll/swiper/taobao-world/images/other.png">
+    </div>
+    <div class="bottom">
+      <img src="http://static.llccing.cn/llccing-demo/scroll/swiper/taobao-world/images/bottom.png" width="100%">
+    </div>
   </div>
 </template>
 <script>
@@ -83,6 +89,9 @@ export default {
 </script>
 <style lang="stylus">
 .taobao-world
+  overflow-y scroll
+  img
+    width 100%
   .top
     display flex
     box-sizing border-box
@@ -173,4 +182,11 @@ export default {
       // background-size 100% 100%
       // background-repeat no-repeat
       background url(http://static.llccing.cn/llccing-demo/scroll/swiper/taobao-world/images/bg.png) no-repeat left bottom/100% auto
+  .content
+    margin-bottom 50px
+  .bottom
+    position fixed
+    bottom 0
+    width 100%
+    background-color #fff
 </style>
