@@ -1,16 +1,12 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-// import Home from '../views/Home.vue'
-import Refresh from '../views/refresh/'
+import Fresh from '../views/fresh'
+import TaobaoWorld from '../views/taobao-world'
+
 
 Vue.use(VueRouter)
 
 const routes = [
-  // {
-  //   path: '/',
-  //   name: 'home',
-  //   component: Home
-  // },
   {
     path: '/about',
     name: 'about',
@@ -20,9 +16,14 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   },
   {
-    path: '/refresh',
-    name: 'refresh',
-    component: Refresh
+    path: '/fresh',
+    name: 'fresh',
+    component: Fresh
+  },
+  {
+    path: '/taobao-world',
+    name: 'taobao-world',
+    component: TaobaoWorld
   }
 ]
 

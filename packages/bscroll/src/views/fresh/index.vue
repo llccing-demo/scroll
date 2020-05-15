@@ -11,7 +11,13 @@
       />
       <div class="nav">
         <cube-scroll direction="horizontal">
-          <cube-tab-bar :showSlider="true" v-model="current" :data="labels" @change="changeHandler"></cube-tab-bar>
+          <cube-tab-bar
+            ref="tabBar"
+            :showSlider="true"
+            v-model="current"
+            :data="labels"
+            @change="changeHandler"
+          ></cube-tab-bar>
         </cube-scroll>
       </div>
     </div>
@@ -20,6 +26,8 @@
       <cube-scroll :scroll-events="['scroll']" @scroll="onContainerScroll">
         <cube-slide
           @change="onContainerSlideChange"
+          @scroll="onContainerHorizontalScroll"
+          :options="containerSlideOptions"
           ref="containerSlide"
           :loop="false"
           :autoPlay="false"
@@ -134,6 +142,11 @@ export default {
       slideImagesOptions: {
         stopPropagation: true
       },
+      containerSlideOptions: {
+        listenScroll: true,
+        probeType: 3,
+        directionLockThreshold: 0
+      },
       productImages,
       isShowTop: true
     }
@@ -157,7 +170,16 @@ export default {
       }
     },
     onContainerSlideChange(index) {
+      console.log(index)
       this.current = index
+    },
+    // 主体内容的左右滚动
+    onContainerHorizontalScroll(pos) {
+      // 此处借鉴，黄老师饿了么项目的效果
+      const tabBarWidth = this.$refs.tabBar.$el.clientWidth
+      const slideWidth = this.$refs.containerSlide.slide.scrollerWidth
+      const transform = -pos.x / slideWidth * tabBarWidth
+      this.$refs.tabBar.setSliderTransform(transform)
     }
   }
 }
