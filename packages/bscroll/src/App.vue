@@ -1,7 +1,9 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/refresh">refresh</router-link>
+    <h1>cube-ui vs Swiper</h1>
+    <div class="nav">
+      <h2>每日优鲜 <router-link to="/fresh">cube-ui</router-link> | <a href="http://static.llccing.cn/llccing-demo/scroll/swiper/fresh/index.html">Swiper</a></h2>
+      <h2>淘宝世界 <router-link to="/taobao-world">cube-ui</router-link> | <a href="http://static.llccing.cn/llccing-demo/scroll/swiper/taobao-world/index.html">Swiper</a></h2>
     </div>
     <transition name="move">
       <router-view class="view" />
@@ -10,6 +12,19 @@
 </template>
 
 <style lang="stylus">
+#app
+  padding-top 20px
+h1
+  text-align center
+  font-size 24px
+.nav
+  display flex
+  flex-flow column
+  padding-top 20px
+  h2
+    margin 10px
+  a
+    color blue
 .view
   position fixed
   top 0
