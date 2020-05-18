@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import Fresh from '../views/fresh'
 import TaobaoWorld from '../views/taobao-world'
+import Tiger from '../views/tiger'
 
 
 Vue.use(VueRouter)
@@ -24,6 +25,11 @@ const routes = [
     path: '/taobao-world',
     name: 'taobao-world',
     component: TaobaoWorld
+  },
+  {
+    path: '/tiger',
+    name: 'tiger',
+    component: Tiger
   }
 ]
 
