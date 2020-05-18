@@ -81,7 +81,6 @@ export default {
       const slideWidth = this.$refs.slide.slide.scrollerWidth
       const percent = -pos.x / slideWidth
       const deg = (180 / 4) * (percent / 0.2)
-      console.log(circle.style)
       circle.style.transform = `rotate(-${deg}deg)`
     }
   }
