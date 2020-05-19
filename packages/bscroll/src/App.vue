@@ -5,6 +5,7 @@
       <h2>每日优鲜 <router-link to="/fresh">cube-ui</router-link> | <a href="http://static.llccing.cn/llccing-demo/scroll/swiper/fresh/index.html">Swiper</a></h2>
       <h2>淘宝世界 <router-link to="/taobao-world">cube-ui</router-link> | <a href="http://static.llccing.cn/llccing-demo/scroll/swiper/taobao-world/index.html">Swiper</a></h2>
       <h2>打老虎 <router-link to="/tiger">cube-ui</router-link> | <a href="http://static.llccing.cn/llccing-demo/scroll/swiper/tiger/index.html">Swiper</a></h2>
+      <h2>美团 <router-link to="/meituan">cube-ui</router-link> | <a href="http://static.llccing.cn/llccing-demo/scroll/swiper/meituan/index.html">Swiper</a></h2>
     </div>
     <transition name="move">
       <router-view class="view" />
@@ -34,6 +35,7 @@ h1
   right 0
   z-index 1
   background-color #fff
+  overflow scroll
   &.move-enter, &.move-leave-active
     transform translate3d(100%, 0, 0)
   &.move-enter-active, &.move-leave-active

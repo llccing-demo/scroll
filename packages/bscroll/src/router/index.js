@@ -3,6 +3,7 @@ import VueRouter from 'vue-router'
 import Fresh from '../views/fresh'
 import TaobaoWorld from '../views/taobao-world'
 import Tiger from '../views/tiger'
+import Meituan from '../views/meituan'
 
 
 Vue.use(VueRouter)
@@ -30,6 +31,11 @@ const routes = [
     path: '/tiger',
     name: 'tiger',
     component: Tiger
+  },
+  {
+    path: '/meituan',
+    name: 'meituan',
+    component: Meituan
   }
 ]
 
